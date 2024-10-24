@@ -3,96 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tournoi</title>
+    <title>Gestion de Tournoi</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
+        h1 {
+            text-align: center;
+            color: #007BFF;
         }
-        .section {
+        h2 {
+            margin-top: 20px;
+            color: #0056b3;
+        }
+        form {
             margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        li {
-            margin-bottom: 10px;
+        input[type="text"],
+        input[type="number"],
+        select {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
         }
         button {
-            padding: 10px;
-            background-color: #28a745;
+            padding: 10px 15px;
+            background-color: #007BFF;
             color: white;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #0056b3;
         }
-        form {
-            display: flex;
-            flex-direction: column;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
-        input {
-            margin-bottom: 10px;
+        li {
+            margin: 5px 0;
             padding: 10px;
-            font-size: 16px;
-        }
-        select {
-            margin-bottom: 10px;
-            padding: 10px;
-            font-size: 16px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
+    
+    <h1>Gestion de Tournoi</h1>
 
-<div class="container">
-    <!-- Section pour ajouter des équipes -->
-    <div class="section">
-        <h2>Ajouter une équipe</h2>
-        <form id="equipeForm">
-            <input type="text" id="nomEquipe" placeholder="Nom de l'équipe" required>
-            <button type="submit">Ajouter l'équipe</button>
-        </form>
-    </div>
+    <h2>Ajouter une équipe</h2>
+    <form id="equipeForm">
+        <input type="text" id="nomEquipe" placeholder="Nom de l'équipe" required>
+        <button type="submit">Ajouter</button>
+    </form>
+    <h3>Équipes inscrites</h3>
+    <ul id="listeEquipes"></ul>
 
-    <!-- Liste des équipes -->
-    <div class="section">
-        <h2>Équipes inscrites</h2>
-        <ul id="listeEquipes"></ul>
-    </div>
+    <h2>Configurer le tournoi</h2>
+    <form id="maxToursForm">
+        <input type="number" id="nombreTours" placeholder="Nombre de tours" min="1" required>
+        <button type="submit">Configurer</button>
+    </form>
 
-    <!-- Bouton pour générer des matchs -->
-    <div class="section">
-        <button id="genererMatchs">Générer les matchs</button>
-    </div>
+    <button id="genererMatchs">Générer les matchs</button>
+    <h3>Matchs à jouer</h3>
+    <ul id="matchs"></ul>
+    <select id="match"></select>
 
-    <!-- Liste des matchs générés -->
-    <div class="section">
-        <h2>Matchs en cours</h2>
-        <ul id="matchs"></ul>
-    </div>
+    <h2>Résultats des matchs</h2>
+    <form id="resultatsForm">
+        <select id="gagnant">
+            <option value="">Sélectionnez un gagnant</option>
+        </select>
+        <button type="submit">Soumettre le résultat</button>
+    </form>
 
-    <!-- Section pour soumettre le résultat des matchs -->
-    <div class="section">
-        <h2>Soumettre le résultat</h2>
-        <form id="resultatsForm">
-            <select id="match" required>
-                <option value="">Sélectionnez un match</option>
-            </select>
-            <select id="gagnant" required>
-                <option value="">Sélectionnez un gagnant</option>
-            </select>
-            <button type="submit">Soumettre le résultat</button>
-        </form>
-    </div>
-</div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script> <!-- Lien vers votre fichier JavaScript -->
 </body>
 </html>

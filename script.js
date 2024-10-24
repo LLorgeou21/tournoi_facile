@@ -222,7 +222,7 @@ function afficherClassement() {
         localStorage.setItem('classement', JSON.stringify(classement));
 
         // Rediriger vers la page de classement
-        window.location.href = 'classement.html';
+        window.location.href = 'classement/classement.html';
     }
 }
 

@@ -130,8 +130,10 @@ function afficherMatchs() {
         // Si tous les tours sont terminés
         const noMatch = document.createElement('p');
         noMatch.textContent = 'Tous les matchs ont été joués';
+        afficherClassement();
         currenttour=0;
         listeMatchs.appendChild(noMatch);
+        
     }
 }
 
@@ -172,12 +174,12 @@ document.getElementById('resultatsForm').addEventListener('submit', function(e) 
     if (tours[tourIndex].length === 0) {
         tours.splice(tourIndex, 1);
         currenttour=currenttour+1;
-        afficherClassement();
+        
     }
 
     // Réafficher les matchs restants
     afficherMatchs();
-    afficherClassement();  // Mettre à jour le classement
+    // Mettre à jour le classement
 
     // Réinitialiser la sélection du match et du gagnant
     document.getElementById('match').value = '';
@@ -217,12 +219,10 @@ document.getElementById('match').addEventListener('change', function() {
 
 // Afficher le classement
 function afficherClassement() {
-    if (currenttour == maxTours) {
         // Enregistrer le classement dans le local storage avant de rediriger
         localStorage.setItem('classement', JSON.stringify(classement));
 
         // Rediriger vers la page de classement
         window.location.href = 'classement/classement.html';
     }
-}
 

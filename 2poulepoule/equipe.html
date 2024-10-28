@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enregistrement des Équipes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../index.html" id="retour">
+        <button class="btn-retour">Retour</button>
+    </a>
+    <h1>Ajouter des Équipes</h1>
+
+    <!-- Section pour ajouter des équipes à la Poule A -->
+    <div class="poule">
+        <h2>Poule A</h2>
+        <input type="text" id="equipe-input-A" placeholder="Nom de l'équipe - Poule A">
+        <button id="ajouter-equipe-A">Ajouter Équipe Poule A</button>
+        <button id="retirer-equipe-A">Retirer Dernière Équipe Poule A</button>
+        <ul id="liste-equipes-A"></ul>
+        <button id="go-to-tournament-A">Lancer le tournoi A</button>
+    </div>
+
+    <!-- Section pour ajouter des équipes à la Poule B -->
+    <div class="poule">
+        <h2>Poule B</h2>
+        <input type="text" id="equipe-input-B" placeholder="Nom de l'équipe - Poule B">
+        <button id="ajouter-equipe-B">Ajouter Équipe Poule B</button>
+        <button id="retirer-equipe-B">Retirer Dernière Équipe Poule B</button>
+        <ul id="liste-equipes-B"></ul>
+        <button id="go-to-tournament-B">Lancer le tournoi B</button>
+    </div>
+
+    <script src="equipe.js"></script>
+</body>
+</html>

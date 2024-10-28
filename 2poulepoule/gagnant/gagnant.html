@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grand Gagnant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #e09b9b;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #40d847;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .retour-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: #3c463d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="retour-btn" onclick="window.location.href='../../index.html'">Retour</button>
+        <h1 id="grand-gagnant"></h1>
+        <p>est le grand gagnant du tournoi !</p>
+    </div>
+    <script>
+        const grand_gagnant = localStorage.getItem('grand_gagnant');
+        document.getElementById('grand-gagnant').textContent = grand_gagnant;
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+#listeEquipes, #matchs, #choixGagnant, #gagnantAnnonce {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 5px 0;
+}
+
+button {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+select {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 400px;
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+select:hover {
+    background-color: #eaeaea;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007BFF;
+    background-color: #fff;
+}
+
+#gagnantAnnonce {
+    display: none;
+    text-align: center;
+}
+
+#gagnantAnnonce h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+#gagnantNom {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+#boutonRetour {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#boutonRetour button {
+    background-color: #28a745;
+}
+
+/* Style pour le bouton de retour */
+.btn-retour {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.btn-retour:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-retour:active {
+    background-color: #003f7f;
+    transform: scale(0.98);
+}
+

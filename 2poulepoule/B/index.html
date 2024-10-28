@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Tournoi</title>
+    <link rel="stylesheet" href="index.css"> <!-- Lien vers le fichier CSS -->
+</head>
+<body>
+    <a href="../equipe.html" id="retour">
+        <button class="btn-retour">Retour</button>
+    </a>
+    <h1>Gestion de Tournoi</h1>
+    <form id="equipeForm">
+        <input type="text" id="nomEquipe" placeholder="Nom de l'équipe">
+    </form>
+
+    <h3>Matchs à jouer</h3>
+    <ul id="matchs"></ul>
+    <select id="match"></select>
+
+    <h2>Résultats des matchs</h2>
+    <form id="resultatsForm">
+        <select id="gagnant">
+            <option value="">Sélectionnez un gagnant</option>
+        </select>
+        <button type="submit">Soumettre le résultat</button>
+    </form>
+
+    <h2>Classement</h2>
+    <table id="classement"></table>
+
+    <script src="script.js"></script> <!-- Lien vers votre fichier JavaScript -->
+</body>
+</html>

@@ -1,96 +1,95 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion de Tournoi</title>
+    <title>Accueil du tournoi</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #f0f8f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
         }
         h1 {
-            text-align: center;
-            color: #007BFF;
-        }
-        h2 {
-            margin-top: 20px;
-            color: #0056b3;
-        }
-        form {
+            font-size: 2em;
             margin-bottom: 20px;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: #28a745;
         }
-        input[type="text"],
-        input[type="number"],
-        select {
+        .btn {
             padding: 10px;
-            margin-right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 200px;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #007BFF;
-            color: white;
+            font-size: 1.2em;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
+            margin: 10px;
         }
-        button:hover {
-            background-color: #0056b3;
+        .btn-debut {
+            background-color: #28a745;
+            color: #fff;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .btn-reset {
+            background-color: #28a745;
+            color: #fff;
         }
-        li {
-            margin: 5px 0;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        .btn-tours {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .tours-max {
+            margin-top: 20px;
+        }
+        input[type="number"] {
+            padding: 5px;
+            font-size: 1em;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    
-    <h1>Gestion de Tournoi</h1>
-
-    <h2>Ajouter une équipe</h2>
-    <form id="equipeForm">
-        <input type="text" id="nomEquipe" placeholder="Nom de l'équipe" required>
-        <button type="submit">Ajouter</button>
-    </form>
-    <h3>Équipes inscrites</h3>
-    <ul id="listeEquipes"></ul>
-
-    <h2>Configurer le tournoi</h2>
-    <form id="maxToursForm">
-        <input type="number" id="nombreTours" placeholder="Nombre de tours" min="1" required>
-        <button type="submit">Configurer</button>
-    </form>
-
-    <button id="genererMatchs">Générer les matchs</button>
-    <h3>Matchs à jouer</h3>
-    <ul id="matchs"></ul>
-    <select id="match"></select>
-
-    <h2>Résultats des matchs</h2>
-    <form id="resultatsForm">
-        <select id="gagnant">
-            <option value="">Sélectionnez un gagnant</option>
-        </select>
-        <button type="submit">Soumettre le résultat</button>
-    </form>
-
-
-    <script src="script.js"></script> <!-- Lien vers votre fichier JavaScript -->
+    <div class="container">
+        <h1>Accueil du tournoi</h1>
+        <button class="btn btn-debut" onclick="debutTournoi()">Début du tournoi</button>
+        <div>
+            <button class="btn btn-reset" onclick="resetTournoi()">Reset</button>
+            <input type="number" id="tours-max" min="1" value="">
+            <button class="btn btn-tours" onclick="definirToursMax()">Définir le nombre de tours maximum</button>
+        </div>
+        <div class="tours-max">
+            <p>Nombre de tours maximum actuel : <span id="tours-max-actuel"></span></p>
+        </div>
+    </div>
+    <script>
+        function debutTournoi() {
+            const serieux = 1;
+            localStorage.setItem('etape', serieux);
+            window.location.href = '2poulepoule/equipe.html';
+        }
+        function resetTournoi() {
+            localStorage.clear();
+            document.getElementById('tours-max').value = '';
+            document.getElementById('tours-max-actuel').textContent = '';
+        }
+        function definirToursMax() {
+            const toursMax = document.getElementById('tours-max').value;
+            localStorage.setItem('tours_max', toursMax);
+            document.getElementById('tours-max-actuel').textContent = toursMax;
+        }
+        const toursMaxActuel = localStorage.getItem('tours_max');
+        if (toursMaxActuel) {
+            document.getElementById('tours-max').value = toursMaxActuel;
+            document.getElementById('tours-max-actuel').textContent = toursMaxActuel;
+        }
+    </script>
 </body>
 </html>

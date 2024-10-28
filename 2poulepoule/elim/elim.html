@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournoi</title>
+    <!-- Intégration du fichier CSS -->
+    <link rel="stylesheet" href="styleelim.css">
+</head>
+<body>
+
+    <h1>Tournoi</h1>
+    
+    <!-- Bouton de retour -->
+    <a href="../equipe.html" id="retour">
+        <button class="btn-retour">Retour</button>
+    </a>
+    
+    <!-- Section pour afficher la liste des équipes -->
+    <div id="listeEquipes">
+        <h2>Équipes Inscrites</h2>
+        <ul id="equipes"></ul>
+    </div>
+    
+    <!-- Section pour créer des matchs -->
+    <div id="matchs">
+        <h2>Matchs</h2>
+        <ul id="listeMatchs"></ul>
+        <button id="genererMatchs">Créer Matchs</button>
+    </div>
+    
+    <!-- Section pour choisir un gagnant -->
+    <div id="choixGagnant">
+        <h2>Choisir le Gagnant</h2>
+        <select id="matchSelect">
+            <option value="">Sélectionnez un match</option>
+        </select>
+        <select id="gagnant">
+            <option value="">Sélectionnez un gagnant</option>
+        </select>
+        <button id="soumettreResultat">Soumettre Résultat</button>
+    </div>
+    
+    <!-- Affichage du gagnant -->
+    <div id="gagnantAnnonce">
+        <h2>Le gagnant est : <span id="gagnantNom"></span></h2>
+    </div>
+    
+    <script src="elim.js"></script>
+    </body>
+    
+</html>
